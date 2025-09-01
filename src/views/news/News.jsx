@@ -11,6 +11,7 @@ const News = () => {
   const [pageCards, setPageCards] = useState(1);
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleIncrement = () => {
     setPageCards((prev) => prev + 1);
@@ -24,6 +25,7 @@ const News = () => {
         setNews([...news, ...data] || []);
       } catch (error) {
         console.error('Error fetching news:', error);
+        setError(error.message);
       } finally {
         setLoading(false);
       }
@@ -44,7 +46,7 @@ const News = () => {
           </ul>
         )}
         {loading && <Loader />}
-
+        {error && <p>{error}</p>}
         <button type="button" className={bem('button')} onClick={handleIncrement}>
           See more
         </button>
