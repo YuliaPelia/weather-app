@@ -6,7 +6,7 @@ import NewsItem from '@/components/NewsItem';
 import Loader from '@/components/loader/Loader';
 
 import { fetchNews } from '@/api/fetchNews';
-
+//test
 const News = () => {
   const [pageCards, setPageCards] = useState(1);
   const [news, setNews] = useState([]);
