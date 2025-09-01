@@ -22,7 +22,7 @@ const App = () => {
         {choosenCard && <DetailsList />}
         {hourlyForecast && <Statistic />}
         {weeklyForecast && <Forecast />}
-        <News />
+        {/* <News /> */}
         <MySwiper />
       </main>
       <Footer />
